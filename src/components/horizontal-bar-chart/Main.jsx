@@ -66,7 +66,7 @@ function Main(props) {
             },
             color: colors.slate["500"](0.8),
             callback: function (value) {
-              return "$" + value;
+              return value;
             },
           },
           grid: {

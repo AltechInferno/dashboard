@@ -1,11 +1,12 @@
 import DarkModeSwitcher from "@/components/dark-mode-switcher/Main";
 import dom from "@left4code/tw-starter/dist/js/dom";
-import logoUrl from "@/assets/images/logo.svg";
-import illustrationUrl from "@/assets/images/illustration.svg";
+import logoUrl from "@/assets/images/logo.png";
+import illustrationUrl from "@/assets/images/banner.png";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
 function Main() {
+  
   const navigate = useNavigate();
   useEffect(() => {
     dom("body").removeClass("main").removeClass("error-page").addClass("login");
@@ -30,8 +31,9 @@ function Main() {
     setIsAuthing(false);
 
     if(response.status === 200) {
-      window.localStorage.getItem("token", response.data.token);
+      window.localStorage.setItem("token", response.data.token);
       window.localStorage.setItem("userData", JSON.stringify(response.data));
+
       navigate("/superadmin");
 
     }
@@ -51,7 +53,7 @@ function Main() {
                   className='w-6'
                   src={logoUrl}
                 />
-                <span className='text-white text-lg ml-3'> Tinker </span>
+                <span className='text-white text-lg ml-3'> AGRIEWS </span>
               </a>
               <div className='my-auto'>
                 <img
@@ -64,7 +66,7 @@ function Main() {
                   sign in to your account.
                 </div>
                 <div className='-intro-x mt-5 text-lg text-white text-opacity-70 dark:text-slate-400'>
-                  Manage all your e-commerce accounts in one place
+                 
                 </div>
               </div>
             </div>

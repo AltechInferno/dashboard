@@ -1792,7 +1792,7 @@
   "resolved" "https://registry.npmjs.org/quick-lru/-/quick-lru-5.1.1.tgz"
   "version" "5.1.1"
 
-"react-dom@^16.8 || ^17.0 || ^18.0", "react-dom@^18.0.0", "react-dom@>=16", "react-dom@>=16.6.0", "react-dom@>=16.8":
+"react-dom@^16.5.0 || ^17.0.1 || ^18.1.0", "react-dom@^16.8 || ^17.0 || ^18.0", "react-dom@^18.0.0", "react-dom@>=16", "react-dom@>=16.6.0", "react-dom@>=16.8":
   "integrity" "sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
   "version" "18.2.0"
@@ -1864,7 +1864,7 @@
     "loose-envify" "^1.4.0"
     "prop-types" "^15.6.2"
 
-"react@^16.5.1 || ^17.0.0 || ^18.0.0", "react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.9.0 || ^17.0.0 || ^18", "react@^18.0.0", "react@^18.2.0", "react@>=16", "react@>=16.13.1", "react@>=16.6.0", "react@>=16.8":
+"react@^16.5.0 || ^17.0.1 || ^18.1.0", "react@^16.5.1 || ^17.0.0 || ^18.0.0", "react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.9.0 || ^17.0.0 || ^18", "react@^18.0.0", "react@^18.2.0", "react@>=16", "react@>=16.13.1", "react@>=16.6.0", "react@>=16.8":
   "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   "version" "18.2.0"
@@ -2009,6 +2009,20 @@
   "integrity" "sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w=="
   "resolved" "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz"
   "version" "1.0.0"
+
+"survey-core@*":
+  "integrity" "sha512-aZJtMP0LhmMdXRoSEOgDDWWsqC+T2+gYzbjCwKhl6+GovlWBrGCFq1ye6D5jg/VfmT/wlcEESBmfxwNZD8ElTw=="
+  "resolved" "https://registry.npmjs.org/survey-core/-/survey-core-1.9.52.tgz"
+  "version" "1.9.52"
+
+"survey-react-ui@^1.9.52":
+  "integrity" "sha512-A06j112/W1PCHnlhlq7ajpggNqNQA3DeHfLpMjIsfryvg7JYNtob1/M8jOFnriP6XuXPS7FdRWMSqziWGMJA3Q=="
+  "resolved" "https://registry.npmjs.org/survey-react-ui/-/survey-react-ui-1.9.52.tgz"
+  "version" "1.9.52"
+  dependencies:
+    "react" "^16.5.0 || ^17.0.1 || ^18.1.0"
+    "react-dom" "^16.5.0 || ^17.0.1 || ^18.1.0"
+    "survey-core" "*"
 
 "tabulator-tables@^4.9.3":
   "integrity" "sha512-iwwQqAEGGxlgrBpcmJJvMJrfjGLcCXOB3AOb/DGkXqBy1YKoYA36hIl7qXGp6Jo8dSkzFAlDT6pKLZgyhs9OnQ=="

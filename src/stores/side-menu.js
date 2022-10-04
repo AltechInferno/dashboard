@@ -22,33 +22,33 @@ const sideMenu = atom({
         subMenu: [
           {
             icon: "",
-            pathname: "/categories",
+            pathname: "/",
             title: "organization",
           },
           {
             icon: "",
-            pathname: "/add-product",
+            pathname: "/",
             title: "Department",
           },
          
           {
             icon: "",
-            pathname: "/reviews",
+            pathname: "/",
             title: "Country",
           },
           {
             icon: "",
-            pathname: "/reviews",
+            pathname: "/",
             title: "Region",
           },
           {
             icon: "",
-            pathname: "/reviews",
+            pathname: "/",
             title: "District",
           },
           {
             icon: "",
-            pathname: "/reviews",
+            pathname: "/",
             title: "Community",
           },
         ],
@@ -59,210 +59,44 @@ const sideMenu = atom({
         subMenu: [
           {
             icon: "",
-            pathname: "/users-layout-1",
+            pathname: "/",
             title: "Create Role",
           },
           {
             icon: "",
-            pathname: "/users-layout-2",
+            pathname: "/",
             title: "Modify Roles",
           },
           {
             icon: "",
-            pathname: "/users-layout-3",
+            pathname: "/",
             title: "Create User",
           },
           {
             icon: "",
-            pathname: "/users-layout-3",
+            pathname: "/",
             title: "Modify User",
           },
           {
             icon: "",
-            pathname: "/users-layout-3",
+            pathname: "/",
             title: "Profile",
           },
         ],
       },
       {
         icon: "Inbox",
-        pathname: "/inbox",
+        pathname: "/",
         title: "Inbox",
       },
    
     
       {
         icon: "FileText",
-        pathname: "/post",
+        pathname: "/",
         title: "Tasks",
       },
-     
-      "devider",
-      {
-        icon: "Edit",
-        title: "Crud",
-        subMenu: [
-          {
-            icon: "",
-            pathname: "/crud-data-list",
-            title: "Data List",
-          },
-          {
-            icon: "",
-            pathname: "/crud-form",
-            title: "Form",
-          },
-        ],
-      },
-     
-      {
-        icon: "Trello",
-        title: "Profile",
-        subMenu: [
-          {
-            icon: "",
-            pathname: "/profile-overview-1",
-            title: "Overview 1",
-          },
-          {
-            icon: "",
-            pathname: "/profile-overview-2",
-            title: "Overview 2",
-          },
-          {
-            icon: "",
-            pathname: "/profile-overview-3",
-            title: "Overview 3",
-          },
-        ],
-      },
-      {
-        icon: "Layout",
-        title: "Pages",
-        subMenu: [
-          {
-            icon: "",
-            title: "Wizards",
-            subMenu: [
-              {
-                icon: "",
-                pathname: "/wizard-layout-1",
-                title: "Layout 1",
-              },
-              {
-                icon: "",
-                pathname: "/wizard-layout-2",
-                title: "Layout 2",
-              },
-              {
-                icon: "",
-                pathname: "/wizard-layout-3",
-                title: "Layout 3",
-              },
-            ],
-          },
-          {
-            icon: "",
-            title: "Blog",
-            subMenu: [
-              {
-                icon: "",
-                pathname: "/blog-layout-1",
-                title: "Layout 1",
-              },
-              {
-                icon: "",
-                pathname: "/blog-layout-2",
-                title: "Layout 2",
-              },
-              {
-                icon: "",
-                pathname: "/blog-layout-3",
-                title: "Layout 3",
-              },
-            ],
-          },
-          {
-            icon: "",
-            title: "Pricing",
-            subMenu: [
-              {
-                icon: "",
-                pathname: "/pricing-layout-1",
-                title: "Layout 1",
-              },
-              {
-                icon: "",
-                pathname: "/pricing-layout-2",
-                title: "Layout 2",
-              },
-            ],
-          },
-          {
-            icon: "",
-            title: "Invoice",
-            subMenu: [
-              {
-                icon: "",
-                pathname: "/invoice-layout-1",
-                title: "Layout 1",
-              },
-              {
-                icon: "",
-                pathname: "/invoice-layout-2",
-                title: "Layout 2",
-              },
-            ],
-          },
-          {
-            icon: "",
-            title: "FAQ",
-            subMenu: [
-              {
-                icon: "",
-                pathname: "/faq-layout-1",
-                title: "Layout 1",
-              },
-              {
-                icon: "",
-                pathname: "/faq-layout-2",
-                title: "Layout 2",
-              },
-              {
-                icon: "",
-                pathname: "/faq-layout-3",
-                title: "Layout 3",
-              },
-            ],
-          },
-          {
-            icon: "",
-            pathname: "login",
-            title: "Login",
-          },
-          {
-            icon: "",
-            pathname: "register",
-            title: "Register",
-          },
-          {
-            icon: "",
-            pathname: "error-page",
-            title: "Error Page",
-          },
-          {
-            icon: "",
-            pathname: "/update-profile",
-            title: "Update profile",
-          },
-          {
-            icon: "",
-            pathname: "/change-password",
-            title: "Change Password",
-          },
-        ],
-      },
-      "devider",
+
       {
         icon: "Inbox",
         title: "Utility",
@@ -286,27 +120,27 @@ const sideMenu = atom({
         subMenu: [
           {
             icon: "",
-            pathname: "/forms/create-form",
+            pathname: "/superadmin/create-form",
             title: "Create Forms",
           },
           {
             icon: "",
-            pathname: "/datepicker",
+            pathname: "/superadmin/view-form",
             title: "View Forms",
           },
           {
             icon: "",
-            pathname: "/tom-select",
+            pathname: "/",
             title: "Category",
           },
           {
             icon: "",
-            pathname: "/file-upload",
+            pathname: "/",
             title: "Rejected Questionnaires",
           },
           {
             icon: "",
-            pathname: "/wysiwyg-editor",
+            pathname: "/",
             title: "Responses",
           },
           

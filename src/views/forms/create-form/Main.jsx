@@ -48,7 +48,7 @@ function Main() {
         formName: formName,
         formDescription: formDescription,
         categoryId: selectedCategory,
-        formStatus:  isActive ? 1: 0,
+        formStatus:  1,
         createdBy: userData.id,
       },
       {
@@ -59,7 +59,8 @@ function Main() {
     );
 
   console.log(response.data);
-  navigate(`/superadmin/create-questionnaire/${response.data.value.message}`)
+  const formId = response.data.value.message
+  navigate(`/superadmin/create-questionnaire/${formId}`)
   };
   return (
     <>

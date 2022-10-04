@@ -365,7 +365,7 @@ function Router() {
     },
     {
       path: "/",
-      element: isLoggedIn ?  <TopMenu /> : <Login />,
+      element: <TopMenu />,
       children: [
         {
           path: "/",
