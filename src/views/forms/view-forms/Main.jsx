@@ -11,7 +11,6 @@ import {
   import { createIcons, icons } from "lucide";
   import Tabulator from "tabulator-tables";
   import dom from "@left4code/tw-starter/dist/js/dom";
-  
   function Main() {
     const tableRef = createRef();
     const tabulator = useRef();
@@ -26,7 +25,7 @@ import {
     );
     const initTabulator = () => {
       tabulator.current = new Tabulator(tableRef.current, {
-        ajaxURL: "",
+        ajaxURL: "https://endpoints.cervello.com.gh/agriews/getAllForms",
         ajaxFiltering: true,
         ajaxSorting: true,
         printAsHtml: true,

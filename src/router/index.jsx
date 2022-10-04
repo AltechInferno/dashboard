@@ -76,13 +76,18 @@ import Slider from "../views/slider/Main";
 import ImageZoom from "../views/image-zoom/Main";
 
 import Main from "../views/welcome";
+import CreateQuestionnaire from "../views/forms/create-questionnaire/Main";
 
 function Router() {
+
+  const isLoggedIn = localStorage.getItem("token") != null;
+
+  
   const routes = [
 
     {
       path: "/superadmin",
-      element: <SideMenu />,
+      element:  isLoggedIn  ? <SideMenu /> : <div></div>,
       children: [
         {
           path: "/superadmin",
@@ -171,6 +176,10 @@ function Router() {
         {
           path: "view-form",
           element: <ViewForm />,
+        },
+        {
+          path: "create-questionnaire/:id",
+          element: <CreateQuestionnaire />,
         },
         {
           path: "users-layout-1",
