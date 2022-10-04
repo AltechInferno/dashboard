@@ -87,7 +87,7 @@ function Router() {
 
     {
       path: "/superadmin",
-      element:  isLoggedIn  ? <SideMenu /> : <div></div>,
+      element:  isLoggedIn  ? <SideMenu /> : <Login />,
       children: [
         {
           path: "/superadmin",
@@ -365,7 +365,7 @@ function Router() {
     },
     {
       path: "/",
-      element: <TopMenu />,
+      element: isLoggedIn ?  <TopMenu /> : <Login />,
       children: [
         {
           path: "/",
@@ -635,7 +635,7 @@ function Router() {
     },
     {
       path: "/simple-menu",
-      element: <SimpleMenu />,
+      element:isLoggedIn ? <SimpleMenu /> : <Login />,
       children: [
         {
           path: "dashboard-overview-1",
@@ -905,7 +905,7 @@ function Router() {
     },
     {
       path: "/top-menu",
-      element: <TopMenu />,
+      element:isLoggedIn ? <TopMenu /> : <Login />,
       children: [
         {
           path: "dashboard-overview-1",
