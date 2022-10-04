@@ -12,6 +12,11 @@ export default defineConfig({
     },
   },
   build: {
+    rollupOptions: {
+      external: [
+        /^node: .*/,
+      ]
+    },
     chunkSizeWarningLimit: 1000000000000,
   },
 });
