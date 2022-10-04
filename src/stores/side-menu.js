@@ -12,13 +12,88 @@ const sideMenu = atom({
       {
         icon: "Box",
         title: "Analytics",
-        ignore: true,
-        pathname: "/",
+        subMenu: [
+          {
+            icon: "",
+            pathname: "/",
+            title: "Query Builder",
+          },
+        ]
         
+      },
+     
+      {
+        icon: "Users",
+        title: "Users",
+        subMenu: [
+         
+          {
+            icon: "",
+            pathname: "/",
+            title: "Manage Roles",
+          },
+          {
+            icon: "",
+            pathname: "/",
+            title: "Manage Users",
+          },
+          
+        ],
+      },
+      {
+        icon: "Inbox",
+        title: "Utility",
+        subMenu: [
+          {
+            icon: "",
+            title: "NADMO",
+            pathname: "/"
+          },
+          {
+            icon: "",
+            title: "MOFA",
+            pathname: "/"
+          },
+        
+        ],
+      },
+      {
+        icon: "Sidebar",
+        title: "Survey",
+        subMenu: [
+          {
+            icon: "",
+            pathname: "/superadmin/create-form",
+            title: "Create Forms",
+          },
+          {
+            icon: "",
+            pathname: "/superadmin/view-form",
+            title: "Manage Forms",
+          },
+         
+        ],
+      },
+      {
+        icon: "Sidebar",
+        title: "Quality Assurance",
+        subMenu: [
+          {
+            icon: "",
+            pathname: "/superadmin/",
+            title: "Review Responses",
+          },
+          {
+            icon: "",
+            pathname: "/superadmin",
+            title: "Queries",
+          },
+         
+        ],
       },
       {
         icon: "ShoppingBag",
-        title: "Features",
+        title: "Settings",
         subMenu: [
           {
             icon: "",
@@ -51,99 +126,6 @@ const sideMenu = atom({
             pathname: "/",
             title: "Community",
           },
-        ],
-      },
-      {
-        icon: "Users",
-        title: "Users",
-        subMenu: [
-          {
-            icon: "",
-            pathname: "/",
-            title: "Create Role",
-          },
-          {
-            icon: "",
-            pathname: "/",
-            title: "Modify Roles",
-          },
-          {
-            icon: "",
-            pathname: "/",
-            title: "Create User",
-          },
-          {
-            icon: "",
-            pathname: "/",
-            title: "Modify User",
-          },
-          {
-            icon: "",
-            pathname: "/",
-            title: "Profile",
-          },
-        ],
-      },
-      {
-        icon: "Inbox",
-        pathname: "/",
-        title: "Inbox",
-      },
-   
-    
-      {
-        icon: "FileText",
-        pathname: "/",
-        title: "Tasks",
-      },
-
-      {
-        icon: "Inbox",
-        title: "Utility",
-        subMenu: [
-          {
-            icon: "",
-            title: "NADMO",
-            pathname: "/"
-          },
-          {
-            icon: "",
-            title: "MOFA",
-            pathname: "/"
-          },
-        
-        ],
-      },
-      {
-        icon: "Sidebar",
-        title: "Forms",
-        subMenu: [
-          {
-            icon: "",
-            pathname: "/superadmin/create-form",
-            title: "Create Forms",
-          },
-          {
-            icon: "",
-            pathname: "/superadmin/view-form",
-            title: "View Forms",
-          },
-          {
-            icon: "",
-            pathname: "/",
-            title: "Category",
-          },
-          {
-            icon: "",
-            pathname: "/",
-            title: "Rejected Questionnaires",
-          },
-          {
-            icon: "",
-            pathname: "/",
-            title: "Responses",
-          },
-          
         ],
       },
      
