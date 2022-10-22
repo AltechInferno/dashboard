@@ -8,8 +8,35 @@ import {
 } from "@/base-components";
 import { faker as $f } from "@/utils";
 import classnames from "classnames";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import logoUrl from "@/assets/images/logo.png";
 
 function Main() {
+
+  const [sentMessages, setSentMessages] = useState([]); 
+
+  useEffect(() => {
+    const fetchSentMessages = async () => {
+      const userData = JSON.parse(localStorage.getItem("userData"));
+      const token = userData.token;
+
+      const response = await axios.get(
+        "https://endpoints.cervello.com.gh/agriews/getAllMessages",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      // console.log(response.data);
+      // console.log(localStorage.getItem("token"));
+      setSentMessages(response.data);
+    };
+    fetchSentMessages();
+  }, []);
+
   return (
     <>
       <div className="grid grid-cols-12 gap-6 mt-8">
@@ -17,18 +44,28 @@ function Main() {
           <h2 className="intro-y text-lg font-medium mr-auto mt-2">Inbox</h2>
           {/* BEGIN: Inbox Menu */}
           <div className="intro-y box bg-primary p-5 mt-6">
-            <button
-              type="button"
-              className="btn text-slate-600 dark:text-slate-300 w-full bg-white dark:bg-darkmode-300 dark:border-darkmode-300 mt-1"
-            >
-              <Lucide icon="Edit3" className="w-4 h-4 mr-2" /> Compose
-            </button>
+          <a href="/superadmin/compose">
+              <button
+                type="button"
+                className="btn text-slate-600 dark:text-slate-300 w-full bg-white dark:bg-darkmode-300 dark:border-darkmode-300 mt-1"
+              >
+                
+                <Lucide icon="Edit3" className="w-4 h-4 mr-2" />Compose
+                
+              </button>
+            </a>
             <div className="border-t border-white/10 dark:border-darkmode-400 mt-6 pt-6 text-white">
               <a
                 href=""
                 className="flex items-center px-3 py-2 rounded-md bg-white/10 dark:bg-darkmode-700 font-medium"
               >
                 <Lucide icon="Mail" className="w-4 h-4 mr-2" /> Inbox
+              </a>
+              <a
+                href="/superadmin/sent"
+                className="flex items-center px-3 py-2 mt-2 rounded-md"
+              >
+                <Lucide icon="Send" className="w-4 h-4 mr-2" /> Sent
               </a>
               <a
                 href=""
@@ -42,12 +79,7 @@ function Main() {
               >
                 <Lucide icon="Inbox" className="w-4 h-4 mr-2" /> Draft
               </a>
-              <a
-                href=""
-                className="flex items-center px-3 py-2 mt-2 rounded-md"
-              >
-                <Lucide icon="Send" className="w-4 h-4 mr-2" /> Sent
-              </a>
+              
               <a
                 href=""
                 className="flex items-center px-3 py-2 mt-2 rounded-md"
@@ -230,9 +262,9 @@ function Main() {
               </Dropdown>
             </div>
             <div className="w-full sm:w-auto flex">
-              <button className="btn btn-primary shadow-md mr-2">
+              {/* <button className="btn btn-primary shadow-md mr-2">
                 Start a Video Call
-              </button>
+              </button> */}
               <Dropdown>
                 <DropdownToggle className="btn px-2 box">
                   <span className="w-5 h-5 flex items-center justify-center">
@@ -310,12 +342,12 @@ function Main() {
               </div>
             </div>
             <div className="overflow-x-auto sm:overflow-x-visible">
-              {$f().map((faker, fakerKey) => (
-                <div key={fakerKey} className="intro-y">
+              {sentMessages.map(({title, content,id, createdDate}) => (
+                <div className="intro-y">
                   <div
                     className={classnames({
                       "inbox__item inline-block sm:block text-slate-600 dark:text-slate-500 bg-slate-100 dark:bg-darkmode-400/70 border-b border-slate-200/60 dark:border-darkmode-400": true,
-                      "inbox__item--active": faker.trueFalse[0],
+                      "inbox__item--active": false,
                     })}
                   >
                     <div className="flex px-5 py-3">
@@ -323,7 +355,7 @@ function Main() {
                         <input
                           className="form-check-input flex-none"
                           type="checkbox"
-                          checked={faker.trueFalse[0]}
+                          checked={false}
                           onChange={() => {}}
                         />
                         <a
@@ -340,23 +372,23 @@ function Main() {
                         </a>
                         <div className="w-6 h-6 flex-none image-fit relative ml-5">
                           <img
-                            alt="Midone Tailwind HTML Admin Template"
+                            alt="Agriews image"
                             className="rounded-full"
-                            src={faker.photos[0]}
+                            src={logoUrl}
                           />
                         </div>
                         <div className="inbox__item--sender truncate ml-3">
-                          {faker.users[0].name}
+                          {title}
                         </div>
                       </div>
                       <div className="w-64 sm:w-auto truncate">
                         <span className="inbox__item--highlight">
-                          {faker.news[0].superShortContent}
+                          
                         </span>
-                        {faker.news[0].shortContent}
+                        {content}
                       </div>
                       <div className="inbox__item--time whitespace-nowrap ml-auto pl-10">
-                        {faker.times[0]}
+                        {createdDate}
                       </div>
                     </div>
                   </div>

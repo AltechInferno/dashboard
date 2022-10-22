@@ -94,7 +94,7 @@ import ReportBarChart1 from "@/components/report-bar-chart-1/Main";
                   </DropdownMenu>
                 </Dropdown>
                 <div className="text-sm 2xl:text-base font-medium -mb-1">
-                  National Tropical  Incidents!
+                  National Topical  Incidents!
                   <span className="text-slate-600 dark:text-slate-300 font-normal">
                      
                   </span>

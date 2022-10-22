@@ -33,9 +33,10 @@ function Main() {
       <div className="flex mt-[4.7rem] md:mt-0 overflow-hidden">
         {/* BEGIN: Simple Menu */}
         <nav className="side-nav side-nav--simple">
-          <Link to="/" className="intro-x flex items-center pl-5 pt-4">
+          <Link to="/" className="intro-x flex items-center pl-5 pt-4"  style={{backgroundColor: "white"}}>
             <img
-              alt="Midone Tailwind HTML Admin Template"
+             
+              alt="AGRIEWS "
               className="w-6"
               src={logoUrl}
             />

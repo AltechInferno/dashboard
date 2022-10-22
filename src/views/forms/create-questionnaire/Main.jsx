@@ -79,7 +79,7 @@ function SurveyCreatorWidget(){
               draggable: true,
               progress: undefined,
               });
-            navigate('/view-form')
+            navigate('/superadmin/view-form')
        }catch(error){
           console.log(error);
        }

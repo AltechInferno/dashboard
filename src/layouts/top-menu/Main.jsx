@@ -44,7 +44,7 @@ function Main() {
         <div className="h-full flex items-center">
           {/* BEGIN: Logo */}
           <Link
-            to="/top-menu/dashboard-overview-1"
+            to="/"
             className="-intro-x hidden md:flex"
           >
             <img
@@ -102,10 +102,11 @@ function Main() {
               tag="div"
               role="button"
               className="w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in scale-110"
+              style={{backgroundColor: "white"}}
             >
               <img
                 alt="Agriews"
-                src={$f()[9].photos[0]}
+                src={logoUrl}
               />
             </DropdownToggle>
             <DropdownMenu className="w-56">
@@ -115,7 +116,11 @@ function Main() {
                
                 
                 <DropdownItem className="hover:bg-white/5">
+                      <Link
+                      to="/login"
+                      className="-intro-x hidden md:flex">
                   <Lucide icon="Lock" className="w-4 h-4 mr-2" /> Signin
+                  </Link>
                 </DropdownItem>
                 <DropdownItem className="hover:bg-white/5">
                   <Lucide icon="HelpCircle" className="w-4 h-4 mr-2" /> Help

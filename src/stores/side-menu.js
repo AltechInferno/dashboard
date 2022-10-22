@@ -21,6 +21,28 @@ const sideMenu = atom({
         ]
         
       },
+      {
+        icon: "Sidebar",
+        title: "Messaging",
+        subMenu: [
+          {
+            icon: "",
+            pathname: "/superadmin/compose",
+            title: "Compose",
+          },
+          {
+            icon: "",
+            pathname: "/superadmin/inbox",
+            title: "Inbox",
+          },
+          {
+            icon: "",
+            pathname: "/superadmin/sent",
+            title: "Sent",
+          },
+         
+        ],
+      },
      
       {
         icon: "Users",
@@ -29,19 +51,19 @@ const sideMenu = atom({
          
           {
             icon: "",
-            pathname: "/",
+            pathname: "/superadmin/view-roles",
             title: "Manage Roles",
           },
           {
             icon: "",
-            pathname: "/",
+            pathname: "/superadmin/view-users",
             title: "Manage Users",
           },
           
         ],
       },
       {
-        icon: "Inbox",
+        icon: "File",
         title: "Utility",
         subMenu: [
           {
@@ -58,7 +80,7 @@ const sideMenu = atom({
         ],
       },
       {
-        icon: "Sidebar",
+        icon: "Files",
         title: "Survey",
         subMenu: [
           {
@@ -71,59 +93,59 @@ const sideMenu = atom({
             pathname: "/superadmin/view-form",
             title: "Manage Forms",
           },
-         
+
         ],
       },
       {
         icon: "Sidebar",
-        title: "Quality Assurance",
+        title: "Data Review",
         subMenu: [
           {
             icon: "",
-            pathname: "/superadmin/",
+            pathname: "/superadmin/view-responses",
             title: "Review Responses",
           },
           {
             icon: "",
-            pathname: "/superadmin",
+            pathname: "/superadmin/view-responses",
             title: "Queries",
           },
          
         ],
       },
       {
-        icon: "ShoppingBag",
+        icon: "Settings",
         title: "Settings",
         subMenu: [
           {
             icon: "",
-            pathname: "/",
+            pathname: "/superadmin/view-organization",
             title: "organization",
           },
           {
             icon: "",
-            pathname: "/",
+            pathname: "/superadmin/view-department",
             title: "Department",
           },
          
           {
             icon: "",
-            pathname: "/",
+            pathname: "/superadmin/view-country",
             title: "Country",
           },
           {
             icon: "",
-            pathname: "/",
+            pathname: "/superadmin/view-region",
             title: "Region",
           },
           {
             icon: "",
-            pathname: "/",
+            pathname: "/superadmin/view-district",
             title: "District",
           },
           {
             icon: "",
-            pathname: "/",
+            pathname: "/superadmin/view-community",
             title: "Community",
           },
         ],

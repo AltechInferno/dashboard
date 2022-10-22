@@ -11,7 +11,6 @@ import classnames from "classnames";
 import TopBar from "@/components/top-bar/Main";
 import MobileMenu from "@/components/mobile-menu/Main";
 import MainColorSwitcher from "@/components/main-color-switcher/Main";
-import DarkModeSwitcher from "@/components/dark-mode-switcher/Main";
 import SideMenuTooltip from "@/components/side-menu-tooltip/Main";
 
 function Main() {
@@ -28,7 +27,7 @@ function Main() {
 
   return (
     <div className="py-5 md:py-0 -mx-3 px-3 sm:-mx-8 sm:px-8 bg-black/[0.15] dark:bg-transparent">
-      <DarkModeSwitcher />
+ 
       <MainColorSwitcher />
       <MobileMenu />
       <div className="flex mt-[4.7rem] md:mt-0 overflow-hidden">
@@ -39,7 +38,7 @@ function Main() {
             className="intro-x flex items-center pl-5 pt-4 mt-3"
           >
             <img
-              alt="Tinker Tailwind HTML Admin Template"
+              alt="AGRIEWS EARLY WARNING SYSTEM"
               className="w-6"
               src={logoUrl}
             />

@@ -350,7 +350,7 @@ const fakers = {
 };
 
 const fakerData = [];
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < 5; i++) {
   fakerData[fakerData.length] = {
     users: fakers.fakeUsers(),
     photos: fakers.fakePhotos(),

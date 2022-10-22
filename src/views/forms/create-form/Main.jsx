@@ -9,6 +9,10 @@ function Main() {
   const [formName, setFormName] = useState("");
   const [formDescription, setFormDescription] = useState("");
   const [isActive, setIsActive] = useState(false);
+  const [departmentId, setDepartmentId] = useState();
+  const [departments, setDepartments] = useState([]);
+  const [selectedDepartment, setSelectedDepartment] = useState(); 
+
   const editorConfig = {
     toolbar: {
       items: ["bold", "italic", "link"],
@@ -17,14 +21,14 @@ function Main() {
   const [editorData, setEditorData] = useState("Description of the form");
 
   const navigate = useNavigate()
+
   useEffect(() => {
     const fetchCategories = async () => {
       const userData = JSON.parse(localStorage.getItem("userData"));
       const token = userData.token;
-      console.log(localStorage.getItem("token"));
 
       const response = await axios.get(
-        "https://endpoints.cervello.com.gh/agriews/getAllCategories",
+        `https://endpoints.cervello.com.gh/agriews/getCategoriesByDepartmentId/2`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -32,10 +36,34 @@ function Main() {
         }
       );
       console.log(response.data);
-      console.log(localStorage.getItem("token"));
+      // console.log(localStorage.getItem("token"));
       setCategories(response.data);
     };
     fetchCategories();
+  }, []);
+
+
+  //get deparment id 
+  useEffect(() => {
+    const fetchDepartments = async () => {
+      const userData = JSON.parse(localStorage.getItem("userData"));
+      const token = userData.token;
+
+      const response = await axios.get(
+        "https://endpoints.cervello.com.gh/agriews/getAllDepartments",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      const responseData = JSON.stringify(response)
+      const sres = JSON.parse(responseData).data[0]['id']
+      console.log(responseData);
+      // console.log(localStorage.getItem("token"));
+      setDepartments(response.data);
+    };
+    fetchDepartments();
   }, []);
 
   const onCreateForm = async (e) => {
@@ -58,7 +86,7 @@ function Main() {
       }
     );
 
-  console.log(response.data);
+  // console.log(response.data);
   const formId = response.data.value.message
   navigate(`/superadmin/create-questionnaire/${formId}`)
   };
@@ -68,7 +96,7 @@ function Main() {
         <h2 className='text-lg font-medium mr-auto'>Create Form</h2>
       </div>
       <div className='grid grid-cols-12 gap-8 mt-5'>
-        <div className='intro-y col-span-12 lg:col-span-6'>
+        <div className='intro-y col-span-12 lg:col-span-8'>
           {/* BEGIN: Form Layout */}
           <div className='intro-y box p-5'>
             <div>
@@ -84,6 +112,23 @@ function Main() {
                 onChange={(e) => setFormName(e.target.value)}
               />
             </div>
+
+            <div className='mt-3'>
+              <label htmlFor='crud-form-2' className='form-label'>
+                Deparments
+              </label>
+              <select
+                value={selectedDepartment}
+                onChange={(e) => setSelectedDepartment(e.target.value)} 
+                className='w-full'
+                
+              >
+                {departments.map(({ id, departmentName }) => (
+                  <option value={id}>{departmentName}</option>
+                ))}
+              </select>
+            </div>
+
             <div className='mt-3'>
               <label htmlFor='crud-form-2' className='form-label'>
                 Category
@@ -94,8 +139,8 @@ function Main() {
                 className='w-full'
                 
               >
-                {categories.map(({ id, categoryName }) => (
-                  <option value={id}>{categoryName}</option>
+                {categories.map(({ id, cat_name }) => (
+                  <option value={id}>{cat_name}</option>
                 ))}
               </select>
             </div>

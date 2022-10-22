@@ -12,7 +12,7 @@ import {
 import { faker as $f } from "@/utils";
 import * as $_ from "lodash";
 import classnames from "classnames";
-
+import logoUrl from "@/assets/images/logo.png";
 function Main(props) {
   const [searchDropdown, setSearchDropdown] = useState(false);
   const showSearchDropdown = () => {
@@ -21,6 +21,11 @@ function Main(props) {
   const hideSearchDropdown = () => {
     setSearchDropdown(false);
   };
+
+  const userData = JSON.parse(localStorage.getItem("userData")); 
+  const username = userData.username
+  const role = userData.role
+  
 
   return (
     <>
@@ -68,7 +73,7 @@ function Main(props) {
               show: searchDropdown,
             })}
           >
-            <div className="search-result__content">
+            {/* <div className="search-result__content">
               <div className="search-result__content__title">Pages</div>
               <div className="mb-5">
                 <a href="" className="flex items-center">
@@ -124,7 +129,7 @@ function Main(props) {
                   </div>
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
         {/* END: Search  */}
@@ -141,7 +146,7 @@ function Main(props) {
             />
           </DropdownToggle>
           <DropdownMenu className="notification-content pt-2">
-            <DropdownContent tag="div" className="notification-content__box">
+            {/* <DropdownContent tag="div" className="notification-content__box">
               <div className="notification-content__title">Notifications</div>
               {$_.take($f(), 5).map((faker, fakerKey) => (
                 <div
@@ -174,7 +179,7 @@ function Main(props) {
                   </div>
                 </div>
               ))}
-            </DropdownContent>
+            </DropdownContent> */}
           </DropdownMenu>
         </Dropdown>
         {/* END: Notifications  */}
@@ -186,31 +191,27 @@ function Main(props) {
             className="w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in"
           >
             <img
-              alt="Midone Tailwind HTML Admin Template"
-              src={$f()[9].photos[0]}
+              alt="AGRIEWS DASHBOARD"
+              src={logoUrl}
             />
           </DropdownToggle>
           <DropdownMenu className="w-56">
             <DropdownContent className="bg-primary text-white">
               <DropdownHeader tag="div" className="!font-normal">
-                <div className="font-medium">{$f()[0].users[0].name}</div>
+                <div className="font-medium">{username}</div>
                 <div className="text-xs text-white/70 mt-0.5 dark:text-slate-500">
-                  {$f()[0].jobs[0]}
+                  {role}
                 </div>
               </DropdownHeader>
               <DropdownDivider className="border-white/[0.08]" />
               <DropdownItem className="hover:bg-white/5">
                 <Lucide icon="User" className="w-4 h-4 mr-2" /> Profile
               </DropdownItem>
-              <DropdownItem className="hover:bg-white/5">
-                <Lucide icon="Edit" className="w-4 h-4 mr-2" /> Add Account
-              </DropdownItem>
+             
               <DropdownItem className="hover:bg-white/5">
                 <Lucide icon="Lock" className="w-4 h-4 mr-2" /> Reset Password
               </DropdownItem>
-              <DropdownItem className="hover:bg-white/5">
-                <Lucide icon="HelpCircle" className="w-4 h-4 mr-2" /> Help
-              </DropdownItem>
+             
               <DropdownDivider className="border-white/[0.08]" />
               <DropdownItem className="hover:bg-white/5">
                 <Lucide icon="ToggleRight" className="w-4 h-4 mr-2" /> Logout
